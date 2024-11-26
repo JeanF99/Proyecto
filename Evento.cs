@@ -7,38 +7,40 @@ using System.Threading.Tasks;
 namespace Proyecto
 {
     namespace Proyecto.Eventos
-    {
-        internal class Evento
+    {   
+        public enum tipo_estado
         {
-            enum tipo_estado
-            {
-                PLANEADO,
-                EN_PROGRESO,
-                FINALIZADO,
-                CANCELADO
-            }
+            PLANEADO,
+            EN_PROGRESO,
+            FINALIZADO,
+            CANCELADO
+        }
+        public abstract class Evento
+        {
             private int idEvento;
             private string nombre;
             private DateTime fecha;
-            private int costo;
-            private tipo_estado tipo;
-
+            private double costo;
+            private tipo_estado tipo_e;
+            private List<Proveedor> proveedores = new List<Proveedor>();
             public int IdEvento { get => idEvento; set => idEvento = value; }
             public string Nombre { get => nombre; set => nombre = value; }
             public DateTime Fecha { get => fecha; set => fecha = value; }
-            public int Costo { get => costo; set => costo = value; }
-            public tipo_estado Tipo { get => tipo; set => tipo = value; }
+            public double Costo { get => costo; set => costo = value; }
+            public tipo_estado Tipo_e { get => tipo_e; set => tipo_e = value; }
+            public List<Proveedor> Proveedores { get => proveedores; set => proveedores = value; }
 
-            public Evento(int evento, int costo, string nombre,
-            DateTime fecha, tipo_estado tipo)
+            public Evento(int idEvento, double costo, string nombre,
+            DateTime fecha, tipo_estado tipo_e)
             {
-
+                this.idEvento = idEvento;
+                this.costo = costo;
+                this.nombre = nombre;
+                this.fecha = fecha;
+                this.tipo_e = tipo_e;
             }
 
-            public void MostrarDetalle(int idEvento)
-            {
-
-            }
+            public abstract void MostrarDetalles();
         }
     }
 }

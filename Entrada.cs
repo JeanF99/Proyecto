@@ -8,11 +8,16 @@ namespace Proyecto
 {
     namespace Proyecto.Compras
     {
-        internal class Entrada
+        public  class Entrada
         {
             private double precio;
 
             public double Precio { get => precio; set => precio = value; }
+
+            public Entrada(double precio)
+            {
+                this.precio = precio;
+            }
         }
     }
 }

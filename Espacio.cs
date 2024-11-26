@@ -8,7 +8,7 @@ namespace Proyecto
 {
     namespace Proyecto.Eventos
     {
-        internal class Espacio
+        internal class Espacio : IConcierto
         {
             private string ubicacion;
             private int puertas;
@@ -24,15 +24,19 @@ namespace Proyecto
 
             public Espacio(string ubicacion, string empresaDuenia, int puertas, int salidas, double area)
             {
-
+                this.ubicacion = ubicacion;
+                this.empresaDuenia = empresaDuenia;
+                this.puertas = puertas;
+                this.salidas = salidas;
+                this.area = area;
             }
             public void RegistrarEspacio(string empresaDuenia, string ubicacion)
             {
-
+                Console.WriteLine($"Se ha registrado una nuevo evento, productor {empresaDuenia} y en la siguiente ubicación {ubicacion}");
             }
-            public void ComunicarEvento(string mensaje)
+            public void ComunicarEvento()
             {
-
+                Console.WriteLine($"Atención! Para todos los oyentes, habrá un gran evento y sus entradas están a la venta, corran!.");
             }
         }
     }

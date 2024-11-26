@@ -10,7 +10,7 @@ namespace Proyecto
 {
     namespace Proyecto.Eventos
     {
-        internal class Actividad
+        public class Actividad
         {
             private string nombre;
             private string descripcion;
@@ -22,10 +22,13 @@ namespace Proyecto
             public int Duracion { get => duracion; set => duracion = value; }
             public int Orden { get => orden; set => orden = value; }
 
-            public void Actividad(string nombre, string descripcion,
+            public Actividad(string nombre, string descripcion,
             int duracion, int orden)
             {
-
+                this.nombre = nombre;
+                this.descripcion = descripcion;
+                this.duracion = duracion;
+                this.orden = orden;
             }
         }
     }

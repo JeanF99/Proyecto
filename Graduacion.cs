@@ -8,7 +8,7 @@ namespace Proyecto
 {
     namespace Proyecto.Eventos
     {
-        internal class Graduacion
+        internal class Graduacion : Evento
         {
             private string institucion;
             private int promocion;
@@ -21,9 +21,18 @@ namespace Proyecto
             public string UbicacionInstitucion { get => ubicacionInstitucion; set => ubicacionInstitucion = value; }
 
             public Graduacion(string institucion, string ubicacionInstitucion,
-            int promocion, int numeroEgresados, bool catering)
+            int promocion, int numeroEgresados, bool catering, int idEvento, string nombre, DateTime fecha, 
+            double costo, tipo_estado tipo_e) : base(idEvento, costo, nombre, fecha, tipo_e)
             {
+                this.institucion = institucion;
+                this.ubicacionInstitucion = ubicacionInstitucion;
+                this.promocion = promocion;
+                this.numeroEgresados = numeroEgresados;
 
+            }
+            public override void MostrarDetalles()
+            {
+                Console.WriteLine($"En esta graduación de la institucion {institucion} ubicada en {ubicacionInstitucion} la promoción del {promocion} complace anunciar que {numeroEgresados} terminaran su etapa!");
             }
         }
     }

@@ -8,11 +8,11 @@ namespace Proyecto
 {
     namespace Proyecto.Eventos
     {
-        internal interface IProveedor
+        public interface IProveedor
         {
-            public void BuscarProveedorPorNombre();
-            public void CantidadTrabajadores();
-            public void MostrarProveedor();
+            public void BuscarProveedorPorNombre(string nombre_ingresado);
+            public void CantidadTrabajadoresDisponibles();
+            public void MostrarProveedor(int idpro);
         }
     }
 }

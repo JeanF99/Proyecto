@@ -8,11 +8,8 @@ namespace Proyecto
 {
     namespace Proyecto.Eventos
     {
-        internal interface IConcierto
+        public interface IConcierto
         {
-            public string Ubicacion();
-            public int Puertas();
-            public int Salidas();
 
             public void RegistrarEspacio()
             {

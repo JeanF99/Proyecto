@@ -8,7 +8,7 @@ namespace Proyecto
 {
     namespace Proyecto.Eventos
     {
-        internal class Itinerario
+        public class Itinerario
         {
             private int horaInicio;
             private int horaFin;
@@ -25,14 +25,20 @@ namespace Proyecto
             public List<Actividad> Actividades { get => actividades; set => actividades = value; }
 
             public Itinerario(int horaInicio, int horaFin, string detalle,
-            string responsable, string requisitosPrevios, List<Actividad> actividades)
+            string responsable, string requisitosPrevios)
             {
+                this.horaFin = horaFin;
+                this.horaInicio = horaInicio;
+                this.detalle = detalle;
+                this.responsable = responsable;
+                this.requisitosPrevios = requisitosPrevios;
+                actividades = new List<Actividad>();
 
             }
 
             public void AgregarActividad(Actividad actividad)
             {
-
+                actividades.Add(actividad);
             }
         }
     }
